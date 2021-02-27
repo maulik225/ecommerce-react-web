@@ -8,7 +8,7 @@ const Dashboard = () => {
 
 	return (
 		<div className="loader">
-			<h2>Welcome to admin dashboard</h2>
+			<h2>Welcome to Admin dashboard</h2>
 		</div>
 	);
 };
