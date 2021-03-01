@@ -46,9 +46,9 @@ const ViewProduct = () => {
 
     // SIZES DROPDOWN ITEM
     var sizes = [];
-    for (var i = 45; i <= 60; i++) {
+    for (var i = 0; i <= 2; i++) {
         sizes.push(
-            { value: i, label: `${i <= 48 ? 'Small' : i <= 55 ? 'Medium' : 'Large'} - ${i} mm` }
+            { value: i, label: `${i <= 0 ? 'Small' : i <= 1 ? 'Medium': 'Large'}` }
         );
     }
 
@@ -117,7 +117,7 @@ const ViewProduct = () => {
                     <div className="divider" />
                     <br />
                     <div>
-                        <span className="text-subtle">Lens Width and Frame Size</span>
+                        <span className="text-subtle">Select</span>
                         <br /><br />
                         <Select
                             placeholder="--Select Size--"

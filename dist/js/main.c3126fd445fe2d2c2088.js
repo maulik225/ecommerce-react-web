@@ -1504,7 +1504,7 @@ var useDocumentTitle_useDocumentTitle = function useDocumentTitle(title) {
     if (title) {
       document.title = title;
     } else {
-      document.title = 'Salinaka - eCommerce React App';
+      document.title = 'Melzo - eCommerce React App';
     }
   }, [title]);
 };
@@ -3157,7 +3157,7 @@ ProductItem_ProductItem.propTypes = {
 
 var products_Products = function Products(_ref) {
   var history = _ref.history;
-  hooks_useDocumentTitle('Product List | Salinaka Admin');
+  hooks_useDocumentTitle('Product List | Melzo Admin');
   hooks_useScrollTop();
   var store = Object(react_redux_es["d" /* useSelector */])(function (state) {
     return {
@@ -4028,7 +4028,7 @@ ProductForm_ProductForm.propTypes = {
 
 
 var edit_product_EditProduct = function EditProduct(props) {
-  hooks_useDocumentTitle('Edit Product | Salinaka');
+  hooks_useDocumentTitle('Edit Product | Melzo');
   hooks_useScrollTop();
 
   var _useSelector = Object(react_redux_es["d" /* useSelector */])(function (state) {
@@ -4071,7 +4071,7 @@ var edit_product_EditProduct = function EditProduct(props) {
 
 var add_product_AddProduct = function AddProduct() {
   hooks_useScrollTop();
-  hooks_useDocumentTitle('Add New Product | Salinaka');
+  hooks_useDocumentTitle('Add New Product | Melzo');
   var isLoading = Object(react_redux_es["d" /* useSelector */])(function (state) {
     return state.app.loading;
   });
@@ -4510,7 +4510,7 @@ var view_product_ViewProduct = function ViewProduct() {
     className: "divider"
   }), /*#__PURE__*/react_default.a.createElement("br", null), /*#__PURE__*/react_default.a.createElement("div", null, /*#__PURE__*/react_default.a.createElement("span", {
     className: "text-subtle"
-  }, "Lens Width and Frame Size"), /*#__PURE__*/react_default.a.createElement("br", null), /*#__PURE__*/react_default.a.createElement("br", null), /*#__PURE__*/react_default.a.createElement(dist_react_select_browser_esm["a" /* default */], {
+  }, "Select Size"), /*#__PURE__*/react_default.a.createElement("br", null), /*#__PURE__*/react_default.a.createElement("br", null), /*#__PURE__*/react_default.a.createElement(dist_react_select_browser_esm["a" /* default */], {
     placeholder: "--Select Size--",
     onChange: onSelectedSizeChange,
     options: sizes,
@@ -4964,7 +4964,7 @@ var signup_SignUp = function SignUp(props) {
   var dispatch = Object(react_redux_es["c" /* useDispatch */])();
   var passwordField = Object(react["useRef"])(null);
   hooks_useScrollTop();
-  hooks_useDocumentTitle('Sign Up | Salinaka');
+  hooks_useDocumentTitle('Sign Up | Melzo');
   Object(react["useEffect"])(function () {
     if (didMount) {
       setSignUpStatus(authStatus);
@@ -5033,7 +5033,7 @@ var signup_SignUp = function SignUp(props) {
     className: "text-center toast-error"
   }, authStatus.message), !isSuccess && /*#__PURE__*/react_default.a.createElement(react_default.a.Fragment, null, /*#__PURE__*/react_default.a.createElement("div", {
     className: "signup-wrapper ".concat(signUpStatus.message && !authStatus.success && 'input-error')
-  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Sign up to Salinaka"), /*#__PURE__*/react_default.a.createElement("form", {
+  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Sign up to Melzo"), /*#__PURE__*/react_default.a.createElement("form", {
     onSubmit: onFormSubmit
   }, /*#__PURE__*/react_default.a.createElement("div", {
     className: "signup-field"
@@ -5057,7 +5057,7 @@ var signup_SignUp = function SignUp(props) {
     label: "* Email",
     maxLength: 40,
     onInputChange: onEmailInput,
-    placeholder: "test@example.com",
+    placeholder: "Your email",
     readOnly: isSigningUp,
     type: "email"
   })), /*#__PURE__*/react_default.a.createElement("div", {
@@ -5182,7 +5182,7 @@ var signin_SignIn = function SignIn(props) {
   var dispatch = Object(react_redux_es["c" /* useDispatch */])();
   var didMount = hooks_useDidMount();
   hooks_useScrollTop();
-  hooks_useDocumentTitle('Sign In | Salinaka');
+  hooks_useDocumentTitle('Sign In | Melzo');
   Object(react["useEffect"])(function () {
     if (didMount) {
       setSignInStatus(authStatus);
@@ -5256,7 +5256,7 @@ var signin_SignIn = function SignIn(props) {
     className: "signin ".concat(signInStatus.message && !authStatus.success && 'input-error')
   }, /*#__PURE__*/react_default.a.createElement("div", {
     className: "signin-main"
-  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Sign in to Salinaka"), /*#__PURE__*/react_default.a.createElement("br", null), /*#__PURE__*/react_default.a.createElement("div", {
+  }, /*#__PURE__*/react_default.a.createElement("h3", null, "Sign in to Melzo"), /*#__PURE__*/react_default.a.createElement("br", null), /*#__PURE__*/react_default.a.createElement("div", {
     className: "signin-wrapper"
   }, /*#__PURE__*/react_default.a.createElement("form", {
     onSubmit: onSubmitForm
@@ -5387,7 +5387,7 @@ var forgot_password_ForgotPassword = function ForgotPassword() {
       setField = _useState6[1];
 
   hooks_useScrollTop();
-  hooks_useDocumentTitle('Forgot Password | Salinaka');
+  hooks_useDocumentTitle('Forgot Password | Melzo');
   Object(react["useEffect"])(function () {
     if (didMount) {
       setForgotPWStatus(authStatus);
@@ -5509,7 +5509,7 @@ var user_account_Loader = function Loader() {
 
 var user_account_UserAccount = function UserAccount() {
   hooks_useScrollTop();
-  hooks_useDocumentTitle('My Account | Salinaka');
+  hooks_useDocumentTitle('My Account | Melzo');
   return /*#__PURE__*/react_default.a.createElement(tab_UserTab, null, /*#__PURE__*/react_default.a.createElement("div", {
     index: 0,
     label: "Account"
@@ -5614,7 +5614,7 @@ function edit_account_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; 
 
 var edit_account_EditProfile = function EditProfile(props) {
   var dispatch = Object(react_redux_es["c" /* useDispatch */])();
-  hooks_useDocumentTitle('Edit Account | Salinaka');
+  hooks_useDocumentTitle('Edit Account | Melzo');
   hooks_useScrollTop();
   Object(react["useEffect"])(function () {
     return function () {
@@ -5859,7 +5859,7 @@ var edit_account_EditProfile = function EditProfile(props) {
     label: "* Email",
     maxLength: 40,
     readOnly: auth.provider !== 'password' || isLoading,
-    placeholder: "test@example.com",
+    placeholder: "Your email",
     onInputChange: onEmailChange,
     isRequired: true,
     field: "email",
@@ -6058,7 +6058,7 @@ var useFeaturedProducts_useFeaturedProducts = function useFeaturedProducts(items
 
 
 var home_Home = function Home() {
-  hooks_useDocumentTitle('Salinaka | Home');
+  hooks_useDocumentTitle('Melzo | Home');
   hooks_useScrollTop();
 
   var _useFeaturedProducts = hooks_useFeaturedProducts(6),
@@ -6405,7 +6405,7 @@ var step1_OrderSummary = function OrderSummary(_ref) {
       subtotal = _ref.subtotal,
       dispatch = _ref.dispatch,
       history = _ref.history;
-  hooks_useDocumentTitle('Check Out Step 1 | Salinaka');
+  hooks_useDocumentTitle('Check Out Step 1 | Melzo');
   hooks_useScrollTop();
 
   var onClickPrevious = function onClickPrevious() {
@@ -6709,7 +6709,7 @@ var step2_ShippingDetails = function ShippingDetails(_ref) {
       shipping = _ref.shipping,
       subtotal = _ref.subtotal,
       history = _ref.history;
-  hooks_useDocumentTitle('Check Out Step 2 | Salinaka');
+  hooks_useDocumentTitle('Check Out Step 2 | Melzo');
   hooks_useScrollTop();
 
   var _useState = Object(react["useState"])({
@@ -7042,7 +7042,7 @@ var step3_Payment = function Payment(_ref) {
       subtotal = _ref.subtotal,
       dispatch = _ref.dispatch,
       history = _ref.history;
-  hooks_useDocumentTitle('Check Out Final Step | Salinaka');
+  hooks_useDocumentTitle('Check Out Final Step | Melzo');
   hooks_useScrollTop();
 
   var _useState = Object(react["useState"])(payment.type || 'paypal'),
@@ -7486,7 +7486,7 @@ var MobileNavigation_Navigation = function Navigation(props) {
   }, /*#__PURE__*/react_default.a.createElement(react_router_dom["a" /* Link */], {
     onClick: onClickLink,
     to: routes["l" /* HOME */]
-  }, /*#__PURE__*/react_default.a.createElement("h2", null, "SALINAKA"))), /*#__PURE__*/react_default.a.createElement(basket_BasketToggle, null, function (_ref) {
+  }, /*#__PURE__*/react_default.a.createElement("h2", null, "Melzo"))), /*#__PURE__*/react_default.a.createElement(basket_BasketToggle, null, function (_ref) {
     var onClickToggle = _ref.onClickToggle;
     return /*#__PURE__*/react_default.a.createElement("button", {
       className: "button-link navigation-menu-link basket-toggle",
@@ -7937,7 +7937,7 @@ function shop_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var shop_Shop = function Shop() {
-  hooks_useDocumentTitle('Shop | Salinaka');
+  hooks_useDocumentTitle('Shop | Melzo');
   hooks_useScrollTop();
 
   var _useState = Object(react["useState"])(6),
@@ -8025,7 +8025,7 @@ var shop_Shop = function Shop() {
 
 
 var featured_FeaturedProducts = function FeaturedProducts() {
-  hooks_useDocumentTitle('Featured Products | Salinaka');
+  hooks_useDocumentTitle('Featured Products | Melzo');
   hooks_useScrollTop();
 
   var _useFeaturedProducts = hooks_useFeaturedProducts(),
@@ -8080,7 +8080,7 @@ var featured_FeaturedProducts = function FeaturedProducts() {
 
 
 var recommended_RecommendedProducts = function RecommendedProducts() {
-  hooks_useDocumentTitle('Recommended Products | Salinaka');
+  hooks_useDocumentTitle('Recommended Products | Melzo');
   hooks_useScrollTop();
 
   var _useRecommendedProduc = hooks_useRecommendedProducts(),

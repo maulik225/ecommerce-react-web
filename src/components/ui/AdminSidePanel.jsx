@@ -16,7 +16,7 @@ const SideNavigation = () => {
 					</NavLink>
 				</div>
 				<div className="sidenavigation-item">
-					<a className="sidenavigation-menu">Users</a>
+					{/* <a className="sidenavigation-menu">Users</a> */}
 				</div>
 			</div>
 		</aside>

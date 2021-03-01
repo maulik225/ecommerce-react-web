@@ -21,7 +21,7 @@ import useScrollTop from 'hooks/useScrollTop';
 const EditProfile = (props) => {
 	const dispatch = useDispatch();
 
-	useDocumentTitle('Edit Account | Salinaka');
+	useDocumentTitle('Edit Account | Melzo');
 	useScrollTop();
 	useEffect(() => {
 		return () => {
@@ -218,7 +218,7 @@ const EditProfile = (props) => {
 						label="* Email"
 						maxLength={40}
 						readOnly={auth.provider !== 'password' || isLoading}
-						placeholder="test@example.com"
+						placeholder="Your email"
 						onInputChange={onEmailChange}
 						isRequired={true}
 						field="email"

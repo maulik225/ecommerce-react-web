@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { ADMIN_DASHBOARD } from 'constants/routes';
 import UserAvatar from 'views/account/components/UserAvatar';
-import logo from '../../../static/logo-full.png';
+import logo from '../../../static/melzo logo.png';
 
 const AdminNavigation = () => {
 	const { isAuthenticating, profile } = useSelector(state => ({
@@ -17,7 +17,7 @@ const AdminNavigation = () => {
 			<div className="logo">
 				<Link to={ADMIN_DASHBOARD} style={{ display: 'flex', alignItems: 'center' }}>
 					<img src={logo} />
-					<h3>ADMIN PANEL</h3>
+					<h3>&nbsp;&nbsp; ADMIN PANEL</h3>
 				</Link>
 			</div>
 			<ul className="navigation-menu">

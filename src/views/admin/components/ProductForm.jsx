@@ -11,7 +11,7 @@ import InputColor from './InputColor';
 
 // Default brand names that I used. You can use what you want
 const brandOptions = [
-	{ value: 'Salt Maalat', label: 'Salt Maalat' },
+	{ value: 'QUECHUA', label: 'QUECHUA' },
 	{ value: 'Betsin Maalat', label: 'Betsin Maalat' },
 	{ value: 'Sexbomb', label: 'Sexbomb' },
 	{ value: 'Black Kibal', label: 'Black Kibal' },
@@ -28,7 +28,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
 		price: { value: product ? defaultProduct.price : 0 },
 		maxQuantity: { value: product ? defaultProduct.maxQuantity : 0 },
 		description: { value: product ? defaultProduct.description : '' },
-		keywords: { value: product ? defaultProduct.keywords : ['gago'] },
+		keywords: { value: product ? defaultProduct.keywords : [''] },
 		imageUrl: { value: product ? defaultProduct.image : '' },
 		isFeatured: { value: product ? defaultProduct.isFeatured : false },
 		isRecommended: { value: product ? defaultProduct.isRecommended : false },

@@ -19,7 +19,7 @@ const Payment = ({
 	dispatch,
 	history
 }) => {
-	useDocumentTitle('Check Out Final Step | Salinaka');
+	useDocumentTitle('Check Out Final Step | Melzo');
 	useScrollTop();
 
 	const [paymentMode, setPaymentMode] = useState(payment.type || 'paypal');

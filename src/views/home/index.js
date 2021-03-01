@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import bannerImg from 'images/banner-girl.png';
+import bannerImg from 'images/banner.jpg';
 
 import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from 'constants/routes';
 import MessageDisplay from 'components/ui/MessageDisplay';
@@ -11,7 +11,7 @@ import useDocumentTitle from 'hooks/useDocumentTitle';
 import useScrollTop from 'hooks/useScrollTop';
 
 const Home = () => {
-	useDocumentTitle('Salinaka | Home');
+	useDocumentTitle('Melzo | Home');
 	useScrollTop();
 
 	const {
@@ -31,8 +31,8 @@ const Home = () => {
 		<div className="home">
 			<div className="banner">
 				<div className="banner-desc">
-					<h1 className="text-thin"><strong>See</strong> everything with <strong>Clarity</strong></h1>
-					<p>Buying eyewear should leave you happy and good-looking, with money in your pocket. Glasses, sunglasses, and contacts—we’ve got your eyes covered.</p>
+					<h1 className="text-thin"><strong>Get&nbsp;</strong>everyone<br/><strong>Moving</strong></h1>
+					{/* <p>Buying eyewear should leave you happy and good-looking, with money in your pocket. Glasses, sunglasses, and contacts—we’ve got your eyes covered.</p> */}
 					<br />
 					<Link to={SHOP} className="button">
 						Shop Now

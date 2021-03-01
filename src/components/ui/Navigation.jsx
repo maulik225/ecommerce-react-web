@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, NavLink, useHistory, useLocation } from 'react-router-dom';
 import UserAvatar from 'views/account/components/UserAvatar';
-import logo from '../../../static/logo-full.png';
+import logo from '../../../static/melzo logo.png';
 import BasketToggle from '../basket/BasketToggle';
 import Badge from './Badge';
 import FiltersToggle from './FiltersToggle';

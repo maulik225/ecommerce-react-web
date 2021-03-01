@@ -27,7 +27,7 @@ const SignUp = (props) => {
 	const passwordField = useRef(null);
 
 	useScrollTop();
-	useDocumentTitle('Sign Up | Salinaka');
+	useDocumentTitle('Sign Up | Melzo');
 	useEffect(() => {
 		if (didMount) {
 			setSignUpStatus(authStatus);
@@ -83,7 +83,7 @@ const SignUp = (props) => {
 			{!isSuccess && (
 				<>
 					<div className={`signup-wrapper ${signUpStatus.message && (!authStatus.success && 'input-error')}`}>
-						<h3>Sign up to Salinaka</h3>
+						<h3>Sign up to Melzo</h3>
 						<form onSubmit={onFormSubmit}>
 							<div className="signup-field">
 								<Input
@@ -105,7 +105,7 @@ const SignUp = (props) => {
 									label="* Email"
 									maxLength={40}
 									onInputChange={onEmailInput}
-									placeholder="test@example.com"
+									placeholder="Your email"
 									readOnly={isSigningUp}
 									type="email"
 								/>

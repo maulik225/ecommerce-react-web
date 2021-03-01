@@ -10,7 +10,7 @@ import useDocumentTitle from 'hooks/useDocumentTitle';
 import useScrollTop from 'hooks/useScrollTop';
 
 const Shop = () => {
-    useDocumentTitle('Shop | Salinaka');
+    useDocumentTitle('Shop | Melzo');
     useScrollTop();
 
     const [columnCount, setColumnCount] = useState(6);
