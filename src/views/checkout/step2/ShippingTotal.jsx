@@ -10,7 +10,7 @@ const ShippingTotal = ({ field, subtotal }) => (
 						<span className="d-block margin-0 padding-right-s text-right">International Shipping: &nbsp;</span>
 					</td>
 					<td>
-						<h4 className="basket-total-amount text-subtle text-right margin-0 ">{field.isInternational ? '$50.00' : '$0.00'}</h4>
+						<h4 className="basket-total-amount text-subtle text-right margin-0 ">{field.isInternational ? '₹50.00' : '₹0.00'}</h4>
 					</td>
 				</tr>
 				<tr>

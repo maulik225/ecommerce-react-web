@@ -10,7 +10,11 @@ import StepTracker from '../components/StepTracker';
 import Pagination from '../components/Pagination';
 import CreditPayment from './CreditPayment';
 import PayPalPayment from './PayPalPayment';
+import RazorpayPaymentGateway from './RazorpayPaymentGateway';
 import withAuth from '../hoc/withAuth';
+import Axios from 'axios';
+// import Razorpay from 'razorpay'
+const Razorpay = window.Razorpay
 
 const Payment = ({
 	shipping,
@@ -46,6 +50,12 @@ const Payment = ({
 		collapseCreditHeight.current.parentElement.style.height = '97px';
 	};
 
+
+	const onRazorPayModeChange = () => {
+		setPaymentMode('razorpay');
+		// collapseCreditHeight.current.parentElement.style.height = '97px';
+	};
+
 	const savePaymentDetails = () => {
 		const isChanged = Object.keys(field).some(key => field[key].value !== payment.data[key]) || paymentMode !== payment.type;
 
@@ -68,20 +78,70 @@ const Payment = ({
 		// eslint-disable-next-line no-extra-boolean-cast
 		const noError = Object.keys(field).every(key => !!field[key].value && !!!field[key].error);
 
-		if (!paymentMode) return;
-		if (paymentMode === 'credit') {
-			if (noError) {
-				displayActionMessage('Feature not ready yet :)', 'info');
-				// TODO: fire only if changed
-				savePaymentDetails();
-				// Do some action here. :)
-			} else {
-				displayActionMessage('All credentials for credit payment required!', 'error');
-			}
-		} else {
-			displayActionMessage('Feature not ready yet :)', 'info');
+		// if (!paymentMode) return;
+		// if (paymentMode === 'credit') {
+		// 	if (noError) {
+		// 		displayActionMessage('Feature not ready yet :)', 'info');
+		// 		// TODO: fire only if changed
+		// 		savePaymentDetails();
+		// 		// Do some action here. :)
+		// 	} else {
+		// 		displayActionMessage('All credentials for credit payment required!', 'error');
+		// 	}
+		// } else {
+		// 	displayActionMessage('RazorPay not ready yet :)', 'info');
+		// }
+
+		if(paymentMode === "razorpay"){
+			displayActionMessage('RazorPay working on this feature :)', 'info');
+			paymentHandler(subtotal)
 		}
 	};
+
+
+  const paymentHandler = async (totalBill) => {
+
+    console.log('total bill inside payment handler')
+    const API_URL = `http://localhost:3000/pay/`
+    // const API_URL = `${config.serverUrl}pay/`
+    const orderUrl = `${API_URL}order`;
+    const response = await Axios.post(orderUrl,{
+	  totalBill:totalBill,
+	  key_id:"rzp_live_ZEgFnIDdWBw4sx",
+	  key_secret:"pWuAcQZb5yc380mZffAB6eNo",
+    });
+    const { data } = response;
+    const options = {
+      "amount": parseInt(totalBill)*100,
+      key: 'rzp_live_ZEgFnIDdWBw4sx',
+      name: "Melzo Jewel",
+      callback_url:'',
+      description: "Exclusive gems, Exclusive you",
+      order_id: data.id,
+      handler: async (response) => {
+        try {
+         const paymentId = response.razorpay_payment_id;
+         alert('Your Order Has Been Successfully Placed! Note This Payment Id For Future Reference '+paymentId);
+         const url = `${API_URL}createorder/`;
+         const captureResponse = await Axios.post(url,{
+			totalBill:totalBill,
+			key_id:"rzp_live_ZEgFnIDdWBw4sx",
+			key_secret:"pWuAcQZb5yc380mZffAB6eNo",
+			paymentId:paymentId
+        })
+      
+        } catch (err) {
+          console.log(err);
+        }
+      },
+      theme: {
+        color: "#686CFD",
+      },
+    };
+    const rzp1 = new Razorpay(options);
+    rzp1.open();
+	};
+	
 
 	const onClickBack = () => {
 		savePaymentDetails();
@@ -93,7 +153,7 @@ const Payment = ({
 			<div className="checkout">
 				<StepTracker current={3} />
 				<div className="checkout-step-3">
-					<CreditPayment
+					{/* <CreditPayment
 						field={field}
 						onCreditModeChange={onCreditModeChange}
 						paymentMode={paymentMode}
@@ -102,11 +162,14 @@ const Payment = ({
 							collapseCreditHeight
 						}}
 						setField={setField}
-					/>
-					<PayPalPayment
+					/> */}
+					{/* <PayPalPayment
 						onPayPalModeChange={onPayPalModeChange}
 						paymentMode={paymentMode}
-					/>
+					/> */}
+
+					<RazorpayPaymentGateway onRazorPayModeChange={onRazorPayModeChange}
+						paymentMode={paymentMode} />
 					<br />
 					<div className="basket-total text-right">
 						<p className="basket-total-title">Total:</p>
