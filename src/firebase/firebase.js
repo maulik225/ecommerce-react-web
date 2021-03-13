@@ -10,13 +10,13 @@ const firebaseConfig = {
 	// projectId: process.env.FIREBASE_PROJECT_ID,
 	// storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
 	// messagingSenderId: process.env.FIREBASE_MSG_SENDER_ID,
-	// appId: process.env.FIREBASE_APP_ID
-	apiKey: "AIzaSyDzCQpErdRPGi1l8Ue2Yst6jS9rw95AnVk",
-    authDomain: "ecommerce-169af.firebaseapp.com",
-    projectId: "ecommerce-169af",
-    storageBucket: "ecommerce-169af.appspot.com",
-    messagingSenderId: "775333890037",
-    appId: "1:775333890037:web:ebb0e7e9198c5111a7c2bc"
+		apiKey: "AIzaSyDzCQpErdRPGi1l8Ue2Yst6jS9rw95AnVk",
+		authDomain: "ecommerce-169af.firebaseapp.com",
+		projectId: "ecommerce-169af",
+		storageBucket: "ecommerce-169af.appspot.com",
+		messagingSenderId: "775333890037",
+		appId: "1:775333890037:web:ebb0e7e9198c5111a7c2bc"
+	  
 
 };
 
