@@ -93,7 +93,6 @@ const Payment = ({
 		// }
 
 		if(paymentMode === "razorpay"){
-			displayActionMessage('RazorPay working on this feature :)', 'info');
 			paymentHandler(subtotal)
 		}
 	};
@@ -102,7 +101,8 @@ const Payment = ({
   const paymentHandler = async (totalBill) => {
 
     console.log('total bill inside payment handler')
-    const API_URL = `https://nbt-server.ap-south-1.elasticbeanstalk.com/pay/`
+    // const API_URL = `https://nbt-server.ap-south-1.elasticbeanstalk.com/pay/`
+    const API_URL = `http://localhost:3000/pay/`
     // const API_URL = `${config.serverUrl}pay/`
     const orderUrl = `${API_URL}order`;
     const response = await Axios.post(orderUrl,{
@@ -119,22 +119,23 @@ const Payment = ({
       description: "Exclusive gems, Exclusive you",
       order_id: data.id,
       handler: async (response) => {
-        try {
+       
          const paymentId = response.razorpay_payment_id;
-         alert('Your Order Has Been Successfully Placed! Note This Payment Id For Future Reference '+paymentId);
-         const url = `${API_URL}createorder/`;
-         const captureResponse = await Axios.post(url,{
+        //  alert('Your Order Has Been Successfully Placed! Note This Payment Id For Future Reference '+paymentId);
+		displayActionMessage(`Payment Captured Successfully :${paymentId})`, 'info');
+		
+		const url = `${API_URL}createorder`;
+         await Axios.post(url,{
 			totalBill:totalBill,
 			key_id:"rzp_live_ZEgFnIDdWBw4sx",
 			key_secret:"pWuAcQZb5yc380mZffAB6eNo",
 			paymentId:paymentId
         }).then(res=>{
 			console.log('most awaited res',res)
-		})
-		
-        } catch (err) {
-          console.log(err);
-        }
+			displayActionMessage(`We will ship your item soon:)`, 'info');
+		}).catch(err=>{
+			console.log('inside post req',err);
+		})	
       },
       theme: {
         color: "#686CFD",
