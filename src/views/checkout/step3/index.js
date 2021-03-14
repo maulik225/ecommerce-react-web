@@ -101,8 +101,8 @@ const Payment = ({
   const paymentHandler = async (totalBill) => {
 
     console.log('total bill inside payment handler')
-    // const API_URL = `https://nbt-server.ap-south-1.elasticbeanstalk.com/pay/`
-    const API_URL = `http://localhost:3000/pay/`
+    const API_URL = `https://nbt-server.ap-south-1.elasticbeanstalk.com/pay/`
+    // const API_URL = `http://localhost:3000/pay/`
     // const API_URL = `${config.serverUrl}pay/`
     const orderUrl = `${API_URL}order`;
     const response = await Axios.post(orderUrl,{
