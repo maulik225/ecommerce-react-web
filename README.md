@@ -1,16 +1,4 @@
 # Melzo | E-commerce react app
-Simple ecommerce react js app with firebase [typescript].
-![Firebase Deploy](https://github.com/jgudo/ecommerce-react/workflows/Firebase%20Deploy/badge.svg)
-
-### [Live demo](https://Melzo-ecommerce.web.app/)
-
-## TypeScript Version [HERE](https://github.com/jgudo/ecommerce-react/tree/typescript-support)
-
-
-![Melzo screenshot](https://raw.githubusercontent.com/jgudo/ecommerce-react/master/static/screeny1.png)
-![Melzo screenshot](https://raw.githubusercontent.com/jgudo/ecommerce-react/master/static/screeny2.png)
-![Melzo screenshot](https://raw.githubusercontent.com/jgudo/ecommerce-react/master/static/screeny3.png)
-![Melzo screenshot](https://raw.githubusercontent.com/jgudo/ecommerce-react/master/static/screeny7.png)
 
 ## Run Locally
 ### 1. Install Dependencies
